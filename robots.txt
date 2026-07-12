@@ -1,49 +1,22 @@
 # =====================================================
-# Robots.txt для Anti-AI Challenge
+# Robots.txt для Anti-AI Challenge (Static HTML)
 # https://anti-ai-challenge.vercel.app/
 # =====================================================
 
-# Разрешаем всем поисковым ботам индексировать сайт
+# Карта сайта
+Sitemap: https://anti-ai-challenge.vercel.app/sitemap.xml
+
+# Общие правила для всех поисковых систем
 User-agent: *
 Allow: /
 
-# Указываем путь к карте сайта
-Sitemap: https://anti-ai-challenge.vercel.app/sitemap.xml
-
-# Закрываем от индексации звуковые и технические файлы
+# Закрываем от индексации тяжелые медиафайлы
 Disallow: /*.mp3$
 Disallow: /*.mp4$
 Disallow: /*.wav$
-Disallow: /favicon.ico
 
-# Хост для Яндекса
-Host: https://anti-ai-challenge.vercel.app/
+# Параметр очистки UTM-меток для Яндекса
+Clean-param: utm_source&utm_medium&utm_campaign /
 
-# Вежливая задержка между запросами (в секундах)
+# Вежливая задержка для неосновных роботов
 Crawl-delay: 1
-
-# =====================================================
-# Специальные правила для конкретных ботов
-# =====================================================
-
-# Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Яндекс
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 1
-Clean-param: utm_source&utm_medium&utm_campaign
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Запрещаем доступ к служебным папкам Vercel
-User-agent: *
-Disallow: /_next/
-Disallow: /api/
-Disallow: /_vercel/
